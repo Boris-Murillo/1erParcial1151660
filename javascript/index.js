@@ -17,13 +17,15 @@ const conectando = async(url) =>  {
 }
 
 const crearPagina = (data) => {
-    
+    const news = [];
+
     //creando elementos
     const img = document.createElement("img");
     img.className ="mg-fluid mx-auto";
     img.src= data[0].img; 
     noticias.appendChild(img);
     
+
     for(let i=0;i<3;i++){
 
         const seccion = document.createElement("section");
@@ -39,9 +41,11 @@ const crearPagina = (data) => {
         seccion.append(titulo);
         parrafo.append(data[i].descripcion);
         seccion.append(parrafo);
-        noticias.append(seccion);
-    }
 
+        news.push(seccion)
+        
+    }
+    noticias.append(...news);
 }
 
 conectando(API_noticias);
