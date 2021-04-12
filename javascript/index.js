@@ -1,5 +1,5 @@
 const API_noticias = "https://demo6497253.mockable.io/noticias";
-const noticias = document.querySelector("#noticias");
+const noticias = document.querySelector(".noticias");
 
 function getData(url_api){
     return fetch(url_api)
@@ -17,23 +17,29 @@ const conectando = async(url) =>  {
 }
 
 const crearPagina = (data) => {
+    
     //creando elementos
     const img = document.createElement("img");
     img.className ="mg-fluid mx-auto";
     img.src= data[0].img; 
-    noticias.append(img);
+    noticias.appendChild(img);
     
     for(let i=0;i<3;i++){
+
         const seccion = document.createElement("section");
         const parrafo = document.createElement("p");
-        const titulo = document.createElement("h5");
+        const titulo = document.createElement("h6");
         const ancla = document.createElement("a");
+        ancla.href = "#";
 
         //agregando
         
-        h5.append(a);
-        seccion.append(h5);
+        ancla.append(data[i].titulo);
+        titulo.append(ancla);
+        seccion.append(titulo);
+        parrafo.append(data[i].descripcion);
         seccion.append(parrafo);
+        noticias.append(seccion);
     }
 
 }
