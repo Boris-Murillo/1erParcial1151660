@@ -1,5 +1,7 @@
 const API_noticias = "https://demo6497253.mockable.io/noticias";
 const noticias = document.querySelector(".noticias");
+const API_deportes =  "https://demo6497253.mockable.io/categoria/deporte"
+const categorias = document.querySelector(".categoria");
 
 function getData(url_api){
     return fetch(url_api)
